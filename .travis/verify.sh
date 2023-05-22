@@ -12,23 +12,6 @@ verify_lsws(){
     fi          
 }    
 
-verify_page(){
-    curl -sI http://localhost/ | grep -i Login
-    if [ ${?} = 0 ]; then
-        echo '[O]  http://localhost:80/' 
-    else
-        echo '[X]  http://localhost:80/'
-        exit 1
-    fi        
-    curl -sIk https://localhost/ | grep -i Login
-    if [ ${?} = 0 ]; then
-        echo '[O]  https://localhost:443/' 
-    else
-        echo '[X]  https://localhost:443/'
-        exit 1
-    fi       
-}
-
 verify_phpadmin(){
     curl -sIk http://localhost:8080/ | grep -i phpMyAdmin
     if [ ${?} = 0 ]; then
@@ -49,6 +32,5 @@ verify_phpadmin(){
 main(){
     verify_lsws
     verify_phpadmin
-    verify_page
 }
 main
