@@ -2,10 +2,6 @@
 
 set -o errexit
 
-install_demo(){
-    ./bin/demosite.sh
-}
-
 verify_lsws(){
     curl -sIk http://localhost:7080/ | grep -i LiteSpeed
     if [ ${?} = 0 ]; then
@@ -17,14 +13,14 @@ verify_lsws(){
 }    
 
 verify_page(){
-    curl -sIk http://localhost:80/ | grep -i WordPress
+    curl -sIk http://localhost:80/ | grep -i CandyCBT
     if [ ${?} = 0 ]; then
         echo '[O]  http://localhost:80/' 
     else
         echo '[X]  http://localhost:80/'
         exit 1
     fi        
-    curl -sIk https://localhost:443/ | grep -i WordPress
+    curl -sIk https://localhost:443/ | grep -i CandyCBT
     if [ ${?} = 0 ]; then
         echo '[O]  https://localhost:443/' 
     else
@@ -53,7 +49,6 @@ verify_phpadmin(){
 main(){
     verify_lsws
     verify_phpadmin
-    install_demo
     verify_page
 }
 main
