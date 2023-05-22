@@ -10,7 +10,7 @@ Install a lightweight CandyCBT container with OpenLiteSpeed Edge or Stable versi
 
 ## Configuration
 Edit the `.env` file to update the demo site domain, default MySQL user, and password.
-Feel free to check [Docker hub Tag page](https://hub.docker.com/repository/docker/shinau21/openlitespeed/tags) if you want to update default openlitespeed and php versions. 
+Feel free to check [Docker hub Tag page](https://hub.docker.com/repository/docker/shinau21/candycbt/tags) if you want to update default openlitespeed and php versions. 
 
 ## Installation
 Clone this repository or copy the files from this repository into a new folder:
@@ -71,7 +71,7 @@ Cloned project
 
 ## Usage
 ### Setup Environment File
-Setup Environment File to configure CandyCBT Database
+1. Setup Environment File to configure CandyCBT Database
 Example:
 ```
 TimeZone=Asia/Jakarta
@@ -84,10 +84,13 @@ MYSQL_PASSWORD=password
 DOMAIN=localhost
 ```
 ### Setup Database
-Setup your Database on .env file, and run this command
+2. Setup your Database on sites/localhost/html/config/config.database.php
 ```
-bash bin/setup.sh
+$user = 'USERNAME';
+$pass = 'PASSWORD';
+$debe = 'DATABASE';
 ```
+Same as you define in env file
 ### Starting a Container
 Start the container with the `up` or `start` methods:
 ```
