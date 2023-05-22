@@ -13,14 +13,14 @@ verify_lsws(){
 }    
 
 verify_page(){
-    curl -sIk http://localhost:80/ | grep -i CBT
+    curl -sIk http://localhost:80/ | grep -i Silahkan
     if [ ${?} = 0 ]; then
         echo '[O]  http://localhost:80/' 
     else
         echo '[X]  http://localhost:80/'
         exit 1
     fi        
-    curl -sIk https://localhost:443/ | grep -i CBT
+    curl -sIk https://localhost:443/ | grep -i Silahkan
     if [ ${?} = 0 ]; then
         echo '[O]  https://localhost:443/' 
     else
