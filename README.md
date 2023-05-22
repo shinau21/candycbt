@@ -2,7 +2,7 @@
 [![Build Status](https://github.com/shinau21/candycbt/workflows/docker-build/badge.svg)](https://github.com/shinau21/candycbt/actions/)
 [![docker pulls](https://img.shields.io/docker/pulls/shinau/candycbt?style=flat&color=blue)](https://hub.docker.com/r/shinau/candycbt)
 
-Install a lightweight WordPress container with OpenLiteSpeed Edge or Stable version based on Ubuntu 22.04 Linux.
+Install a lightweight CandyCBT container with OpenLiteSpeed Edge or Stable version based on Ubuntu 22.04 Linux.
 
 ### Prerequisites
 1. [Install Docker](https://www.docker.com/)
@@ -31,7 +31,6 @@ The docker image installs the following packages on your system:
 |CandyCBT|[Current version: 2.9.4](https://cbtcandy.com/)|
 |MariaDB|[Stable version: 10.5](https://hub.docker.com/_/mariadb)|
 |PHP|[Latest version](http://rpms.shinau21.com/debian/)|
-|LiteSpeed Cache|[Latest from WordPress.org](https://wordpress.org/plugins/litespeed-cache/)|
 |ACME|[Latest from ACME official](https://github.com/acmesh-official/get.acme.sh)|
 |phpMyAdmin|[Latest from dockerhub](https://hub.docker.com/r/bitnami/phpmyadmin/)|
 
@@ -68,7 +67,7 @@ Cloned project
 
   * `lsws` contains all web server configuration files
 
-  * `sites` contains the document roots (the WordPress application will install here)
+  * `sites` contains the document roots (the CandyCBT application will install here)
 
 ## Usage
 ### Setup Environment File
