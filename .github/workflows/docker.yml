@@ -19,6 +19,7 @@ jobs:
           docker-compose -v
           docker-compose up -d
           docker image ls
+          docker container ls | grep candycbt
           sleep 10
       - name: Verify
         run: bash .travis/verify.sh    
