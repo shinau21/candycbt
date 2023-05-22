@@ -3,11 +3,11 @@ name: docker-build
 on:
   push:
     branches:
-      - master
+      - main
 
   pull_request:
     branches:
-      - master
+      - maim
 
 jobs:
   test:
