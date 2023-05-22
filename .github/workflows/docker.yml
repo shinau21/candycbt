@@ -7,7 +7,7 @@ on:
 
   pull_request:
     branches:
-      - maim
+      - main
 
 jobs:
   test:
