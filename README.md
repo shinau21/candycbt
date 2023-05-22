@@ -1,6 +1,6 @@
 # OpenLiteSpeed WordPress Docker Container
 [![Build Status](https://github.com/shinau21/candycbt/workflows/docker-build/badge.svg)](https://github.com/shinau21/candycbt/actions/)
-[![docker pulls](https://img.shields.io/docker/pulls/shinau/candycbt?style=flat&color=blue)](https://hub.docker.com/r/shinau/openlitespeed)
+[![docker pulls](https://img.shields.io/docker/pulls/shinau/candycbt?style=flat&color=blue)](https://hub.docker.com/r/shinau/candycbt)
 
 Install a lightweight WordPress container with OpenLiteSpeed Edge or Stable version based on Ubuntu 22.04 Linux.
 
