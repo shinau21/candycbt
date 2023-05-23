@@ -18,6 +18,7 @@ before_script:
   - sleep 10
 
 script:  
+  - docker exec -it candycbt-ols /bin/bash -c "/etc/init.d/mariadb start && exit"
   - bash .travis/verify.sh
 
 after_script:
