@@ -42,6 +42,6 @@ verify_phpadmin(){
 main(){
     verify_lsws
     verify_phpadmin
-    verif
+    verify_page
 }
 main
