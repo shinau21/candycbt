@@ -24,5 +24,5 @@ jobs:
         run: bash .travis/verify.sh    
       - name: Clean up 
         run: |
-         docker-compose stop
-         docker-compose rm -f            
+         docker container stop candycbt
+         docker rm -f candycbt
