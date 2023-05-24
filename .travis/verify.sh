@@ -3,7 +3,7 @@
 set -o errexit
 
 verify_page(){
-    curl -sIk http://localhost:80/ | grep -i CANDY
+    curl -sIk http://localhost:80/ | grep -i login.php
     if [ ${?} = 0 ]; then
         echo '[O]  http://localhost/'
     else
