@@ -3,11 +3,11 @@
 set -o errexit
 
 verify_page(){
-    curl -sIk http://localhost:80/ | grep -i login.php
+    curl -sk http://localhost:80/ | grep -i "Candy CBT"
     if [ ${?} = 0 ]; then
-        echo '[O]  http://localhost/'
+        echo '[O]  http://localhost:80/'
     else
-        echo '[X]  http://localhost/'
+        echo '[X]  http://localhost:80/'
         exit 1
     fi          
 }
