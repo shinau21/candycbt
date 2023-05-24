@@ -17,7 +17,7 @@ jobs:
       - name: Setup
         run: |
           docker pull shinau/candycbt
-          docker container -d --name candycbt -p 80:80 -p 443:443 -p 7080:7080 -p 8080:8080 shinau/candycbt
+          docker run -d --name candycbt -p 80:80 -p 443:443 -p 7080:7080 -p 8080:8080 shinau/candycbt
           docker container ls | grep candycbt
           sleep 10
       - name: Verify
