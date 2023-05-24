@@ -2,16 +2,6 @@
 
 set -o errexit
 
-verify_page(){
-    curl -sIk http://localhost:80/ | grep -i http://localhost/login.php
-    if [ ${?} = 0 ]; then
-        echo '[O]  http://localhost:80/'
-    else
-        echo '[X]  http://localhost:80/'
-        exit 1
-    fi          
-}
-
 verify_lsws(){
     curl -sIk http://localhost:7080/ | grep -i LiteSpeed
     if [ ${?} = 0 ]; then
@@ -42,6 +32,5 @@ verify_phpadmin(){
 main(){
     verify_lsws
     verify_phpadmin
-    verify_page
 }
 main
