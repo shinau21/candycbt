@@ -1,32 +1,18 @@
 version: '3'
 services:
   mysql:
-    image: mariadb:10.5.9
+    image: shinau/candycbt:db
     logging:
       driver: none
     command: --max_allowed_packet=256M
-    volumes:
-      - "./data/db:/var/lib/mysql:delegated"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     restart: always
     networks:
       - default
-  candycbt:
-    image: litespeedtech/openlitespeed:${OLS_VERSION}-${PHP_VERSION}
+  web:
+    image: shinau/candycbt:web
     logging:
       driver: none
-    env_file:
-      - .env
     volumes:
-      - ./lsws/conf:/usr/local/lsws/conf
-      - ./lsws/admin-conf:/usr/local/lsws/admin/conf
-      - ./bin/container:/usr/local/bin
-      - ./sites:/var/www/vhosts/
-      - ./acme:/root/.acme.sh/
       - ./logs:/usr/local/lsws/logs/
     ports:
       - 80:80
@@ -34,11 +20,9 @@ services:
       - 443:443/udp
       - 7080:7080
     restart: always
-    environment:
-      TZ: ${TimeZone}
     networks:
       - default
-  phpmyadmin:
+  pma:
     image: bitnami/phpmyadmin:5.2.0-debian-11-r43
     ports:
       - 8080:8080
