@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-pod
+  labels:
+    name: db-pod
+    app: candycbt
+spec:
+  containers:
+    - name: mysql
+      image: shinau/candycbt:db
+      ports:
+        - containerPort: 3306

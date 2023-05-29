@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pma-pod
+  labels:
+    name: pma-pod
+    app: candycbt
+spec:
+  containers:
+    - name: webapp
+      image: bitnami/phpmyadmin:5.2.0-debian-11-r43
+      env:
+        - name: DATABASE_HOST
+          value: mysql
+      ports:
+        - containerPort: 8080
+        - containerPort: 8443
